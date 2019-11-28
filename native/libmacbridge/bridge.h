@@ -80,6 +80,11 @@ void delete_string(int32_t count);
  */
 void trigger_paste();
 
+/*
+ * Trigger alternative paste ( Pressing CTRL+V )
+ */
+void trigger_alternative_paste();
+
 // UI
 
 /*

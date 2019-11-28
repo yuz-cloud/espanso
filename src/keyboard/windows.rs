@@ -44,7 +44,7 @@ impl super::KeyboardManager for WindowsKeyboardManager {
         }
     }
 
-    fn trigger_paste(&self) {
+    fn trigger_paste(&self, _: bool) {
         unsafe {
             trigger_paste();
         }

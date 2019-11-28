@@ -201,7 +201,8 @@ impl <'a, S: KeyboardManager, C: ClipboardManager, M: ConfigManager<'a>, U: UIMa
             },
             BackendType::Clipboard => {
                 self.clipboard_manager.set_clipboard(&target_string);
-                self.keyboard_manager.trigger_paste();
+
+                self.keyboard_manager.trigger_paste(config.force_alternative_paste_shortcut);
             },
         }
 

@@ -29,7 +29,7 @@ mod macos;
 pub trait KeyboardManager {
     fn send_string(&self, s: &str);
     fn send_enter(&self);
-    fn trigger_paste(&self);
+    fn trigger_paste(&self, alternative_shortcut: bool);
     fn delete_string(&self, count: i32);
     fn move_cursor_left(&self, count: i32);
 }

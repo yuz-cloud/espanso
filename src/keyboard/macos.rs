@@ -39,9 +39,19 @@ impl super::KeyboardManager for MacKeyboardManager {
         }
     }
 
-    fn trigger_paste(&self) {
+    fn trigger_paste(&self, alternative_shortcut: bool) {
         unsafe {
-            trigger_paste();
+            if !alternative_shortcut {
+                trigger_paste();
+            }else{
+                // Alternative paste is used in those situations in which we are communicating
+                // with a system which uses CTRL+V instead of CMD+V to trigger the pasting.
+                // Examples of this situation:
+                // * Using a Windows VM inside MacOS
+                // * Using a remote desktop software
+                // In those situations, we have to send another shortcut to the guest system.
+                trigger_alternative_paste();
+            }
         }
     }
 

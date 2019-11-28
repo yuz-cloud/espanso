@@ -36,7 +36,7 @@ impl super::KeyboardManager for LinuxKeyboardManager {
         // On linux this is not needed, so NOOP
     }
 
-    fn trigger_paste(&self) {
+    fn trigger_paste(&self, _: bool) {
         unsafe {
             let is_terminal = is_current_window_terminal();
 

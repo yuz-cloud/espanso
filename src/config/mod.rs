@@ -49,6 +49,7 @@ fn default_disabled() -> bool{ false }
 fn default_log_level() -> i32 { 0 }
 fn default_ipc_server_port() -> i32 { 34982 }
 fn default_use_system_agent() -> bool { true }
+fn default_force_alternative_paste_shortcut() -> bool { false }
 fn default_config_caching_interval() -> i32 { 800 }
 fn default_word_separators() -> Vec<char> { vec![' ', ',', '.', '\r', '\n', 22u8 as char] }
 fn default_toggle_interval() -> u32 { 230 }
@@ -102,6 +103,9 @@ pub struct Configs {
 
     #[serde(default)]
     pub backend: BackendType,
+
+    #[serde(default = "default_force_alternative_paste_shortcut")]
+    pub force_alternative_paste_shortcut: bool,
 
     #[serde(default = "default_exclude_default_matches")]
     pub exclude_default_matches: bool,
