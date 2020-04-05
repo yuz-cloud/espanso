@@ -1,0 +1,14 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: service-order
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ored?useSSL=false&s&useUnicode=true&characterEncoding=UTF8&serverTimezone=UTC
+    username: root
+    password: 123456
+  jpa:
+    database: MySQL
+    show-sql: true
+    open-in-view: true
